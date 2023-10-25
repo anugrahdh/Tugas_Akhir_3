@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tower Solotrum
+  m_Controller: {fileID: 9100000, guid: 73d111530939d0047b45ea9a5fea2379, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -2921755615720285415, guid: e28db0b7f0522804c8dca1ca8198481e,
+      type: 3}
+    m_OverrideClip: {fileID: -6241469114633452756, guid: 8e79cb7ff1b7b7543bcf499d0527e6f6,
+      type: 3}
+  - m_OriginalClip: {fileID: -4869113343401064914, guid: e28db0b7f0522804c8dca1ca8198481e,
+      type: 3}
+    m_OverrideClip: {fileID: -7075406929898952515, guid: 8e79cb7ff1b7b7543bcf499d0527e6f6,
+      type: 3}
