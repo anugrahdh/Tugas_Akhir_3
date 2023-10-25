@@ -150,7 +150,7 @@ namespace TowerDefense.UI
 		/// <summary>
 		/// Shows the end game screen
 		/// </summary>
-		protected void OpenEndGameScreen(string endResultText)
+		protected void OpenEndGameScreen(string endResultText, bool isWin)
 		{
 			LevelItem level = GameManager.instance.GetLevelForCurrentScene();
 			endGameCanvas.enabled = true;
@@ -160,7 +160,14 @@ namespace TowerDefense.UI
 			if (level != null) 
 			{
 				endGameMessageText.text = string.Format (endResultText, level.name.ToUpper ());
-				GameManager.instance.CompleteLevel (level.id, score);
+				if(isWin)
+				{
+					GameManager.instance.CompleteLevel (level.id, score);
+				}
+				else
+				{
+					GameManager.instance.CompleteLevelLost(level.id);
+				}
 			} 
 			else 
 			{
@@ -186,7 +193,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		protected void Victory()
 		{
-			OpenEndGameScreen(levelCompleteText);
+			OpenEndGameScreen(levelCompleteText, true);
 			if ((victorySound != null) && (audioSource != null))
 			{
 				audioSource.PlayOneShot(victorySound);
@@ -228,7 +235,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		protected void Defeat()
 		{
-			OpenEndGameScreen(levelFailedText);
+			OpenEndGameScreen(levelFailedText, false);
 			if (nextLevelButton != null)
 			{
 				nextLevelButton.enabled = false;

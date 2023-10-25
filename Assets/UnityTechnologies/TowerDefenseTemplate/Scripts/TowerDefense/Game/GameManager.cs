@@ -41,6 +41,22 @@ namespace TowerDefense.Game
 			m_DataStore.CompleteLevel(levelId, starsEarned);
 			SaveData();
 		}
+		/// <summary>
+		/// Method used for completing the level but lost
+		/// </summary>
+		/// <param name="levelId">The levelId to mark as complete</param>
+		/// <param name="starsEarned"></param>
+		public void CompleteLevelLost(string levelId)
+		{
+			if (!levelList.ContainsKey(levelId))
+			{
+				Debug.LogWarningFormat("[GAME] Cannot complete level with id = {0}. Not in level list", levelId);
+				return;
+			}
+
+			//m_DataStore.CompleteLevel(levelId, starsEarned);
+			SaveData();
+		}
 
 		/// <summary>
 		/// Gets the id for the current level
